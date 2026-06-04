@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0d0d0d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    transition: background 0.6s ease;
+}
+
+body.happy {
+    background: #080f08;
+}
+
+.container {
+    text-align: center;
+    padding: 40px 32px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.emoji {
+    font-size: 80px;
+    margin-bottom: 28px;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 7vw, 52px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+
+.hint {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 44px;
+    letter-spacing: 0.3px;
+    transition: all 0.4s ease;
+    min-height: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+button {
+    font-family: 'Syne', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, opacity 0.3s ease;
+    letter-spacing: 0.2px;
+}
+
+#yes-btn {
+    background: #1e1e1e;
+    color: #aaa;
+    border: 1.5px solid #333;
+}
+
+#yes-btn:hover {
+    background: #2a2a2a;
+    transform: scale(1.04);
+}
+
+#no-btn {
+    background: #ffffff;
+    color: #0d0d0d;
+}
+
+#no-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.97) !important;
+}
+
+/* Love message state */
+.love-msg h1 {
+    color: #a8ff78;
+    font-size: clamp(24px, 5.5vw, 44px);
+}
+
+.love-msg .hint {
+    color: #4a7a4a;
+    font-size: 15px;
+}
+
+/* Shake */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-8px); }
+    40%       { transform: translateX(8px); }
+    60%       { transform: translateX(-5px); }
+    80%       { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.4s ease !important;
+}
+
+/* Float */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-12px); }
+}
+
+/* Fade transition */
+@keyframes fadeSwap {
+    0%   { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeSwap 0.4s ease forwards;
+}
+
+/* Confetti */
+.confetti-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.piece {
+    position: absolute;
+    animation: fall linear forwards;
+    opacity: 0;
+}
+
+@keyframes fall {
+    0%   { transform: translateY(-40px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(600deg); opacity: 0; }
+}
