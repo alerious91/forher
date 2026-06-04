@@ -2,17 +2,17 @@ const steps = [
     {
         question: "Baadik m3asbe?",
         hint: "are you still mad?",
-        emoji: "🥺"
+        emoji: "🙂"
     },
     {
         question: "M2akde?",
         hint: "are you sure?",
-        emoji: "😟"
+        emoji: ""
     },
     {
         question: "M2akde m2akde?",
         hint: "are you sure sure?",
-        emoji: "😓"
+        emoji: "🤨"
     },
     {
         question: "M2akde m2akde m2akde?",
@@ -39,7 +39,7 @@ function onYes() {
         // Wiggle the emoji too
         const emojiEl = document.getElementById('emoji');
         emojiEl.style.animation = 'none';
-        emojiEl.textContent = '😭';
+        emojiEl.textContent = '🙃';
         setTimeout(() => {
             emojiEl.style.animation = 'float 3s ease-in-out infinite';
         }, 100);
@@ -59,7 +59,7 @@ function onYes() {
 }
 
 function onNo() {
-    swapContent("💛", "No more mdeya2a.", "Bhbk 🌶️", true);
+    swapContent("💛", "No more to3sib.", "Bhbk", true);
     document.getElementById('buttons').style.display = 'none';
     document.body.classList.add('happy');
     launchConfetti();
