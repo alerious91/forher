@@ -7,7 +7,7 @@ const steps = [
     {
         question: "M2akde?",
         hint: "are you sure?",
-        emoji: ""
+        emoji: "😀"
     },
     {
         question: "M2akde m2akde?",
@@ -17,7 +17,7 @@ const steps = [
     {
         question: "M2akde m2akde m2akde?",
         hint: "really really really sure?",
-        emoji: "🫠"
+        emoji: "😒"
     }
 ];
 
